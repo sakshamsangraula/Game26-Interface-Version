@@ -1,0 +1,12 @@
+package sxs3122lab14;
+
+public interface PlayerAPI {
+	// define abstract methods in this interface so that the classes implementing this interface
+	// can override all of these methods
+  
+	public abstract void addCard(Card a);
+	public int getHandValue();
+	boolean hit();
+	public String toString();
+	
+}
