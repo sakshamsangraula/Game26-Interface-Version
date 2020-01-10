@@ -1,0 +1,55 @@
+package card;
+
+// This class returns a card with face followed by the suit, initializes the instance variables with the values
+// and returns the values in the getValue() method which will be used by the getHandValue() method to sum
+// the values of all the cards
+public class Card {
+	
+	    private String face;
+	    private String suit;
+	    private int value;
+
+	    // Initialize the instance variables in the constructor
+	    public Card(int value, String suit) {
+	        this.suit = suit;
+	        this.value = value;
+
+	        // change the values of J, Q, and K to 10 and change the value of A to 11
+	        if (value == 11) {
+	            this.face = "J";
+	            this.value = 10;
+	        } else if (value == 12) {
+	            this.face = "Q";
+	            this.value = 10;
+	        } else if (value == 13) {
+	            this.face = "K";
+	            this.value = 10;
+	        } else if (value == 1) {
+	            this.face = "A";
+	            this.value = 11;
+	        } else {
+	            this.face = "" + value;
+	        }
+	    }
+	    public String getFace() {
+	    	return face;
+	    }
+	    public boolean convertAce() {
+	        if (face.equals("A") && value == 11) {
+	            value = 1;
+	            return true;
+	        }
+	        return false;
+	    }
+
+	    // return the value in the getter method
+	    public int getValue() {
+	        return value;
+	    }
+
+	    // override the Object toString() method and return face followed by the suit
+	    public String toString() {
+	        return face + suit;
+	    }
+	}
+
