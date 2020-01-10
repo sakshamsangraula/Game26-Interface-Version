@@ -1,4 +1,4 @@
-package sxs3122lab14;
+package player;
 
 import java.util.ArrayList;
 
